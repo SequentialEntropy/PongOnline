@@ -195,7 +195,7 @@ class JoinMenu:
         self.portField = TextField(self.screen, "1234567890", [size[0] * 0.5, size[1] * 0.1], [size[0] * 0.5, size[1] * 0.6], font, 50, ["centerx", "centery"], [white, black, cyan])
 
     def draw(self):
-        screen.fill(black)
+        self.screen.fill(black)
 
         self.screen.blit(self.titleSurface, self.titleRect)
         self.ipField.draw()
@@ -215,7 +215,7 @@ class JoinMenu:
                 page = "Quit"
             elif event.type == pygame.KEYUP:
                 if event.key == pygame.K_ESCAPE:
-                    page = "Quit"
+                    page = "Title"
 
         return page
 
@@ -250,7 +250,7 @@ class HostMenu:
                 page = "Quit"
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
-                    page = "Quit"
+                    page = "Title"
 
         self.textField.event(eventList)
 

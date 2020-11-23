@@ -3,9 +3,15 @@ from Colours import *
 import os
 from Menu import *
 from Objects import *
+import sys
 
 path = os.path.dirname(os.path.abspath(__file__))
 os.chdir(path)
+
+def resource_path(relative):
+    if hasattr(sys, "_MEIPASS"):
+        return os.path.join(sys._MEIPASS, relative)
+    return os.path.join(relative)
 
 pygame.init()
 pygame.font.init()
@@ -15,9 +21,7 @@ size = screen.get_size()
 
 clock = pygame.time.Clock()
 
-font = "./Fonts/atlantis-international-font/AtlantisInternational-jen0.ttf"
-regularfont = pygame.font.Font("./Fonts/atlantis-international-font/AtlantisInternational-jen0.ttf", 30)
-titlefont = pygame.font.Font("./Fonts/atlantis-international-font/AtlantisInternational-jen0.ttf", 50)
+font = resource_path(os.path.join('Fonts', 'atlantis-international-font/AtlantisInternational-jen0.ttf'))
 
 def test(a="", b=""):
     print("a: " + a)

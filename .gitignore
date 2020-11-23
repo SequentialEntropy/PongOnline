@@ -1,1 +1,4 @@
 __pycache__/
+Pong.spec
+build/
+dist/
